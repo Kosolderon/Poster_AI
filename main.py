@@ -13,14 +13,13 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_input = update.message.text or "[Голосовое сообщение]"
-    # тут должна быть логика Whisper + GPT
     response_text = f"Вы хотите получить топ-5 продаж за 7 дней?\n\nВаш запрос: \"{user_input}\""
     keyboard = [
         [InlineKeyboardButton("✅ Да", callback_data="confirm"),
          InlineKeyboardButton("❌ Нет", callback_data="cancel")]
     ]
     await update.message.reply_text(response_text, reply_markup=InlineKeyboardMarkup(keyboard))
-
+    
 async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
