@@ -1,2 +1,3 @@
-# Poster_AI
-AI assistant 
+# Poster Telegram Bot
+
+Бот для анализа продаж Poster POS через Telegram.
