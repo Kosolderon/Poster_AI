@@ -16,7 +16,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # тут должна быть логика Whisper + GPT
     response_text = f"Вы хотите получить топ-5 продаж за 7 дней?"
 
-Ваш запрос: «{user_input}»"
+Ваш запрос: \"{user_input}\""
     keyboard = [
         [InlineKeyboardButton("✅ Да", callback_data="confirm"),
          InlineKeyboardButton("❌ Нет", callback_data="cancel")]
