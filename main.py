@@ -19,14 +19,13 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
          InlineKeyboardButton("❌ Нет", callback_data="cancel")]
     ]
     await update.message.reply_text(response_text, reply_markup=InlineKeyboardMarkup(keyboard))
-    
+
 async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
     if query.data == "confirm":
         result = get_sales_data()
-        await query.edit_message_text(f"Вот данные:
-{result}")
+        await query.edit_message_text(f"Вот данные:\n{result}")
     else:
         await query.edit_message_text("Окей. Попробуй переформулировать запрос.")
 
